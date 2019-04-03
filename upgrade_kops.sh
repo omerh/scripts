@@ -1,9 +1,13 @@
 #!/bin/bash
 
+set -e
+
+OS=$(uname | tr '[:upper:]' '[:lower:]')
+
 echo "Upgrading kops"
 
-curl -Lo kops https://github.com/kubernetes/kops/releases/download/"$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)"/kops-darwin-amd64
-SHA1=$(curl -L https://github.com/kubernetes/kops/releases/download/"$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)"/kops-darwin-amd64-sha1)
+curl -Lo kops https://github.com/kubernetes/kops/releases/download/"$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)"/kops-${OS}-amd64
+SHA1=$(curl -L https://github.com/kubernetes/kops/releases/download/"$(curl -s https://api.github.com/repos/kubernetes/kops/releases/latest | grep tag_name | cut -d '"' -f 4)"/kops-${OS}-amd64-sha1)
 
 echo "Verifying kops SHA1"
 
