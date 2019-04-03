@@ -19,3 +19,5 @@ else
     echo "SHA1 failed verification"
     exit 1
 fi
+
+kops version
