@@ -15,9 +15,8 @@ if [[ "$SHA1" == `shasum kops | awk '{print $1}'` ]]; then
     else
         sudo mv ./kops /usr/local/bin/kops
     fi
+    kops version
 else
     echo "SHA1 failed verification"
     exit 1
 fi
-
-kops version
