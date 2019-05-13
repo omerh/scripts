@@ -1,5 +1,10 @@
 #!/bin/bash
+#
+# Run remote
 # curl https://raw.githubusercontent.com/omerh/scripts/master/make-iphone-ringtone.sh | bash -s [youtube-link]
+#
+# Or make an alias in your .zshrc | .bashrc
+# alias make-ring='function _iphone(){curl https://raw.githubusercontent.com/omerh/scripts/master/make-iphone-ringtone.sh | bash -s $1};_iphone'
 
 pip install --upgrade youtube-dl
 brew install ffmpeg
