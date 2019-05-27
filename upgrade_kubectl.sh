@@ -20,4 +20,4 @@ else
   mv ./kubectl /usr/local/bin/kubectl
 fi
 
-kubectl version
+kubectl version --client
